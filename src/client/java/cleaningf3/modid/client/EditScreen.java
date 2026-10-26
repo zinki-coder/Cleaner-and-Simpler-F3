@@ -27,8 +27,20 @@ public class EditScreen extends Screen {
     private static final Map<Identifier, DebugScreenEntryStatus> SAVED = new HashMap<>();
     private final Map<String, List<Identifier>> groups = new LinkedHashMap<>();
 
+    private final Screen parent;
+
     public EditScreen() {
+        this(null);
+    }
+
+    public EditScreen(Screen parent) {
         super(Component.literal("F3 anpassen"));
+        this.parent = parent;
+    }
+
+    @Override
+    public void onClose() {
+        Minecraft.getInstance().setScreen(parent);
     }
 
     @Override

@@ -13,13 +13,16 @@
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/cleaning-f3/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
 			"cleaningf3.modid.CleaningF3"
 		],
 		"client": [
 			"cleaningf3.modid.client.CleaningF3Client"
+		],
+		"modmenu": [
+			"cleaningf3.modid.client.ModMenuIntegration"
 		]
 	},
 	"mixins": [
@@ -31,7 +34,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.20.1",
-		"minecraft": "~26.1.2",
+		"minecraft": "~26.1",
 		"java": ">=25",
 		"fabric-api": "*"
 	}

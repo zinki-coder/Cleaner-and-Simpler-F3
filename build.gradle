@@ -4,6 +4,10 @@ plugins {
 }
 
 repositories {
+	maven {
+		name = "Terraformers"
+		url = "https://maven.terraformersmc.com/"
+	}
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -23,6 +27,8 @@ loom {
 }
 
 dependencies {
+	// Mod Menu nur zum Kompilieren, wird fuer Spieler nicht Pflicht
+	clientCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
