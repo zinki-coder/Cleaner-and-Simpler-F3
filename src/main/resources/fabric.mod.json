@@ -2,16 +2,17 @@
 	"schemaVersion": 1,
 	"id": "cleaning-f3",
 	"version": "${version}",
-	"name": "Cleaning-F3",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Cleaning F3",
+	"description": "Colour-coded F3 debug screen with groups you can show or hide with one click.",
 	"authors": [
-		"Me!"
+		"zinki-coder"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/zinki-coder/Cleaning-F3",
+		"sources": "https://github.com/zinki-coder/Cleaning-F3",
+		"issues": "https://github.com/zinki-coder/Cleaning-F3/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/cleaning-f3/icon.png",
 	"environment": "client",
 	"entrypoints": {
