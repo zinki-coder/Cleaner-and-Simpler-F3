@@ -7,7 +7,7 @@ import net.minecraft.client.KeyMapping;
 import org.lwjgl.glfw.GLFW;
 
 public class CleaningF3Client implements ClientModInitializer {
-    private static KeyMapping openEditor;
+    public static KeyMapping openEditor;
 
     @Override
     public void onInitializeClient() {

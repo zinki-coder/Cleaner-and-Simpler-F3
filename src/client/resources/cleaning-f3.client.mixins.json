@@ -3,7 +3,8 @@
 	"package": "cleaningf3.modid.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"DebugScreenEntriesMixin"
+		"DebugScreenEntriesMixin",
+		"DebugScreenOverlayMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

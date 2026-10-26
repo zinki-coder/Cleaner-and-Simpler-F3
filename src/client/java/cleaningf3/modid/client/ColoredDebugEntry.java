@@ -12,16 +12,16 @@ import net.minecraft.world.level.chunk.LevelChunk;
 
 public final class ColoredDebugEntry implements DebugScreenEntry {
     private final DebugScreenEntry inner;
-    private final String color;
+    private final String marker;
 
     public ColoredDebugEntry(Identifier id, DebugScreenEntry inner) {
         this.inner = inner;
-        this.color = GroupColors.colorFor(id);
+        this.marker = Group.of(id).marker();
     }
 
     @Override
     public void display(DebugScreenDisplayer displayer, Level level, LevelChunk clientChunk, LevelChunk serverChunk) {
-        inner.display(new Coloring(displayer, color), level, clientChunk, serverChunk);
+        inner.display(new Tagging(displayer, marker), level, clientChunk, serverChunk);
     }
 
     @Override
@@ -34,14 +34,18 @@ public final class ColoredDebugEntry implements DebugScreenEntry {
         return inner.category();
     }
 
-    private record Coloring(DebugScreenDisplayer target, String color) implements DebugScreenDisplayer {
-        @Override public void addPriorityLine(String line) { target.addPriorityLine(color + line); }
-        @Override public void addLine(String line) { target.addLine(color + line); }
-        @Override public void addToGroup(Identifier group, Collection<String> lines) {
-            List<String> colored = new ArrayList<>();
-            for (String line : lines) colored.add(color + line);
-            target.addToGroup(group, colored);
+    private record Tagging(DebugScreenDisplayer target, String marker) implements DebugScreenDisplayer {
+        private String tag(String line) {
+            return (line == null || line.isEmpty()) ? line : marker + line;
         }
-        @Override public void addToGroup(Identifier group, String line) { target.addToGroup(group, color + line); }
+
+        @Override public void addPriorityLine(String line) { target.addPriorityLine(tag(line)); }
+        @Override public void addLine(String line) { target.addLine(tag(line)); }
+        @Override public void addToGroup(Identifier group, Collection<String> lines) {
+            List<String> tagged = new ArrayList<>();
+            for (String line : lines) tagged.add(tag(line));
+            target.addToGroup(group, tagged);
+        }
+        @Override public void addToGroup(Identifier group, String line) { target.addToGroup(group, tag(line)); }
     }
 }
