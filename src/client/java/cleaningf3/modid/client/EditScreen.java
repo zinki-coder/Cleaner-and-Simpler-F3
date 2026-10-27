@@ -18,14 +18,17 @@ import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class EditScreen extends Screen {
-    private static final float S = F3Renderer.SCALE;
+    private static final float S = F3Renderer.EDIT_SCALE;
+    private static final int BTN = 10;
+    private static final int BTN_SC = Math.round(BTN / S);
+    private static final int BOX_H = 12;
     private static final int TITLE_TOP = 6;
-    private static final int ROWS_TOP = 32;
-    private static final int ROW_STEP = 20;
-    private static final int BTN_SCALED = Math.round(12 / S);
+    private static final int ROWS_TOP = 34;
+    private static final int ROW_STEP = 26;
+    private static final int GAP = 4;
     private static final Map<Identifier, DebugScreenEntryStatus> SAVED = new HashMap<>();
 
-    private record Row(Group group, List<Identifier> ids, int x, int y) {}
+    private record Row(Group group, List<Identifier> ids, int count, int x, int y) {}
 
     private final Screen parent;
     private final List<Row> rows = new ArrayList<>();
@@ -54,7 +57,7 @@ public class EditScreen extends Screen {
     }
 
     private String label(Row r) {
-        return r.group().label() + " (" + r.ids().size() + ")";
+        return r.group().label() + " (" + r.count() + ")";
     }
 
     private int labelBoxW(Row r) {
@@ -66,39 +69,41 @@ public class EditScreen extends Screen {
     }
 
     private int totalWidth(Row r) {
-        return labelBoxW(r) + 4 + statusW() + 3 + BTN_SCALED;
+        return labelBoxW(r) + GAP + statusW() + GAP + BTN_SC;
     }
 
     @Override
     protected void init() {
         rows.clear();
-        List<Row> tmp = new ArrayList<>();
+        int sw = Math.round(this.width / S);
+        int y = ROWS_TOP;
         for (Group gr : Group.ordered()) {
             List<Identifier> ids = new ArrayList<>();
-            for (Identifier id : DebugScreenEntries.allEntries().keySet()) {
-                if (Group.of(id) == gr && !Group.isVisualization(id)) ids.add(id);
+            int count;
+            if (gr == Group.DEBUG_CHARTS) {
+                count = 3;
+            } else {
+                for (Identifier id : DebugScreenEntries.allEntries().keySet()) {
+                    if (Group.of(id) == gr && Group.isKept(id)) ids.add(id);
+                }
+                if (ids.isEmpty()) continue;
+                count = ids.size();
             }
-            if (!ids.isEmpty()) tmp.add(new Row(gr, ids, 0, 0));
-        }
-        int sw = Math.round(this.width / S);
-        int maxW = 0;
-        for (Row r : tmp) maxW = Math.max(maxW, totalWidth(r));
-        int x0 = (sw - maxW) / 2;
-        int y = ROWS_TOP;
-        for (Row r : tmp) {
-            Row row = new Row(r.group(), r.ids(), x0, y);
+            Row probe = new Row(gr, ids, count, 0, y);
+            int x = (sw - totalWidth(probe)) / 2;
+            Row row = new Row(gr, ids, count, x, y);
             rows.add(row);
-            boolean shown = isShown(row.ids());
-            int bx = Math.round((row.x() + labelBoxW(row) + 4 + statusW() + 3) * S);
-            int by = Math.round((row.y() - 2) * S);
+            boolean shown = isShown(row);
+            int bx = Math.round((x + labelBoxW(row) + GAP + statusW() + GAP) * S);
+            int by = Math.round((y + BOX_H / 2f) * S - BTN / 2f);
             this.addRenderableWidget(Button.builder(Component.literal(shown ? "-" : "+"), b -> {
-                setGroup(row.ids(), !isShown(row.ids()));
+                toggle(row);
                 this.rebuildWidgets();
-            }).bounds(bx, by, 12, 12).build());
+            }).bounds(bx, by, BTN, BTN).build());
             y += ROW_STEP;
         }
         this.addRenderableWidget(Button.builder(Component.literal("Fertig"), b -> this.onClose())
-            .bounds(this.width / 2 - 50, this.height - 52, 100, 20).build());
+            .bounds(this.width / 2 - 40, this.height - 50, 80, 16).build());
     }
 
     @Override
@@ -128,14 +133,14 @@ public class EditScreen extends Screen {
             g.text(f, b, tx + wa + 1 + 6, TITLE_TOP + 4, 0xFFFFFFFF, false);
 
             for (Row r : rows) {
-                boolean shown = isShown(r.ids());
+                boolean shown = isShown(r);
                 int lw = labelBoxW(r);
-                F3Renderer.roundedFill(g, r.x(), r.y(), r.x() + lw, r.y() + 12, r.group().color());
+                F3Renderer.roundedFill(g, r.x(), r.y(), r.x() + lw, r.y() + BOX_H, r.group().color());
                 g.text(f, label(r), r.x() + 3, r.y() + 2, 0xFF000000, false);
 
-                int sx = r.x() + lw + 4;
+                int sx = r.x() + lw + GAP;
                 int aw = f.width("(aus)");
-                F3Renderer.roundedFill(g, sx, r.y(), sx + statusW(), r.y() + 12, 0xB0000000);
+                F3Renderer.roundedFill(g, sx, r.y(), sx + statusW(), r.y() + BOX_H, 0xB0000000);
                 g.text(f, "(aus)", sx + 3, r.y() + 2, shown ? 0xFF8A8A8A : 0xFFFF5555, false);
                 g.text(f, "(ein)", sx + 3 + aw + 4, r.y() + 2, shown ? 0xFF7CFC7C : 0xFF8A8A8A, false);
             }
@@ -149,17 +154,23 @@ public class EditScreen extends Screen {
         return false;
     }
 
-    private static boolean isShown(List<Identifier> ids) {
+    private static boolean isShown(Row r) {
+        if (r.group() == Group.DEBUG_CHARTS) return Settings.debugChartsShown();
         DebugScreenEntryList list = Minecraft.getInstance().debugEntries;
-        for (Identifier id : ids) {
+        for (Identifier id : r.ids()) {
             if (list.getStatus(id) != DebugScreenEntryStatus.NEVER) return true;
         }
         return false;
     }
 
-    private static void setGroup(List<Identifier> ids, boolean show) {
+    private static void toggle(Row r) {
+        if (r.group() == Group.DEBUG_CHARTS) {
+            Settings.setDebugChartsShown(!Settings.debugChartsShown());
+            return;
+        }
+        boolean show = !isShown(r);
         DebugScreenEntryList list = Minecraft.getInstance().debugEntries;
-        for (Identifier id : ids) {
+        for (Identifier id : r.ids()) {
             if (show) {
                 DebugScreenEntryStatus old = SAVED.get(id);
                 list.setStatus(id, old != null ? old : DebugScreenEntryStatus.IN_OVERLAY);

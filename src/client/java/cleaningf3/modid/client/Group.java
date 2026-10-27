@@ -1,22 +1,20 @@
 package cleaningf3.modid.client;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 import net.minecraft.resources.Identifier;
 
 public enum Group {
-    SYSTEM("System", "\u00a7c", 0xE0F28B82),
     PERFORMANCE("Leistung", "\u00a7e", 0xE0FFE066),
-    LOOKING_AT("Blickziel", "\u00a79", 0xE08AB4F8),
     POSITION("Position & Welt", "\u00a7a", 0xE08FD694),
     RENDERING("Rendering & Chunks", "\u00a7d", 0xE0F58FCB),
-    MISC("Sonstiges", "\u00a76", 0xE0FFB347);
+    MISC("Sonstiges", "\u00a76", 0xE0FFB347),
+    SYSTEM("System", "\u00a7c", 0xE0F28B82),
+    LOOKING_AT("Blickziel", "\u00a79", 0xE08AB4F8),
+    DEBUG_CHARTS("Debug Charts", "\u00a78", 0xE0C8A27A);
 
+    public static final int ALL = Integer.MAX_VALUE;
     private static final Pattern CODES = Pattern.compile("\u00a7.");
-    private static final List<Group> ORDER = new ArrayList<>(
-        List.of(PERFORMANCE, SYSTEM, RENDERING, POSITION, MISC, LOOKING_AT));
 
     private final String label;
     private final String marker;
@@ -32,23 +30,15 @@ public enum Group {
     public String marker() { return marker; }
     public int color() { return color; }
 
+    /** Feste Reihenfolge im Overlay. */
     public static List<Group> ordered() {
-        return new ArrayList<>(ORDER);
-    }
-
-    /** Merkt sich die Reihenfolge, in der Gruppen im F3 erscheinen (links oben nach unten, dann rechts). */
-    public static void learn(List<Group> seen) {
-        if (seen.size() < 2) return;
-        List<Integer> slots = new ArrayList<>();
-        for (Group g : seen) slots.add(ORDER.indexOf(g));
-        Collections.sort(slots);
-        for (int k = 0; k < seen.size(); k++) ORDER.set(slots.get(k), seen.get(k));
+        return List.of(values());
     }
 
     public static Group fromLine(String line) {
         if (line == null || line.length() < 2) return null;
         for (Group g : values()) {
-            if (line.startsWith(g.marker)) return g;
+            if (g != DEBUG_CHARTS && line.startsWith(g.marker)) return g;
         }
         return null;
     }
@@ -70,6 +60,23 @@ public enum Group {
 
     public static boolean isVisualization(Identifier id) {
         return has(id.getPath(), "visualize", "hitboxes", "borders", "crosshair", "paths", "octree", "visibility");
+    }
+
+    /** Wie viele Zeilen eines Eintrags angezeigt werden: 0 = gar keine, ALL = alle. */
+    public static int lineLimit(Identifier id) {
+        String p = id.getPath();
+        return switch (of(id)) {
+            case PERFORMANCE -> has(p, "fps") ? ALL : 0;
+            case POSITION -> (has(p, "biome", "day_count") || (has(p, "position") && !has(p, "section"))) ? ALL : 0;
+            case RENDERING -> has(p, "chunk_generation", "post_effect") ? 0 : ALL;
+            case LOOKING_AT -> (has(p, "looking_at_block") && !has(p, "tags")) ? 2 : 0;
+            default -> ALL;
+        };
+    }
+
+    /** Einträge, die im Overlay zur Gruppe zählen und im F3 etwas anzeigen. */
+    public static boolean isKept(Identifier id) {
+        return lineLimit(id) != 0 && !isVisualization(id);
     }
 
     private static boolean has(String path, String... parts) {

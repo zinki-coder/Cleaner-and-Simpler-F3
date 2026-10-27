@@ -11,6 +11,7 @@ public class CleaningF3Client implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        Settings.load();
         openEditor = KeyMappingHelper.registerKeyMapping(
             new KeyMapping("key.cleaningf3.edit", GLFW.GLFW_KEY_K, KeyMapping.Category.DEBUG));
 
