@@ -19,7 +19,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"cleaning-f3" {
+		"cleaner-and-simpler-f3" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}

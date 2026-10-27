@@ -1,4 +1,4 @@
-package cleaningf3.modid.client;
+package cleanerandsimplerf3.modid.client;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -14,7 +14,7 @@ public final class Settings {
     private Settings() {}
 
     private static Path file() {
-        return FabricLoader.getInstance().getConfigDir().resolve("cleaning-f3.properties");
+        return FabricLoader.getInstance().getConfigDir().resolve("cleaner-and-simpler-f3.properties");
     }
 
     public static void load() {
@@ -41,7 +41,7 @@ public final class Settings {
             Properties p = new Properties();
             p.setProperty("debugCharts", Boolean.toString(value));
             try (Writer w = Files.newBufferedWriter(file())) {
-                p.store(w, "Cleaning F3");
+                p.store(w, "Cleaner and Simpler F3");
             }
         } catch (IOException | RuntimeException ignored) {
         }

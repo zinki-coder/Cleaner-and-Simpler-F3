@@ -1,6 +1,6 @@
-package cleaningf3.modid.client.mixin;
+package cleanerandsimplerf3.modid.client.mixin;
 
-import cleaningf3.modid.client.F3Renderer;
+import cleanerandsimplerf3.modid.client.F3Renderer;
 import java.util.List;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.DebugScreenOverlay;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(DebugScreenOverlay.class)
 public class DebugScreenOverlayMixin {
     @Inject(method = "extractLines", at = @At("HEAD"), cancellable = true)
-    private void cleaningf3$lines(GuiGraphicsExtractor graphics, List<String> lines, boolean left, CallbackInfo ci) {
+    private void cleanerandsimplerf3$lines(GuiGraphicsExtractor graphics, List<String> lines, boolean left, CallbackInfo ci) {
         try {
             F3Renderer.render(graphics, lines, left);
             ci.cancel();

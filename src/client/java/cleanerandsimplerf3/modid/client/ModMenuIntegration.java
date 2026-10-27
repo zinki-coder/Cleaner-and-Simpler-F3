@@ -1,4 +1,4 @@
-package cleaningf3.modid.client;
+package cleanerandsimplerf3.modid.client;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "cleaningf3.modid.client.mixin",
+	"package": "cleanerandsimplerf3.modid.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
 		"DebugScreenEntriesMixin",

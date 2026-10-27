@@ -1,4 +1,4 @@
-package cleaningf3.modid.client;
+package cleanerandsimplerf3.modid.client;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,7 +49,7 @@ public class EditScreen extends Screen {
 
     @Override
     public boolean keyPressed(KeyEvent event) {
-        if (event.key() == GLFW.GLFW_KEY_F3 || CleaningF3Client.openEditor.matches(event)) {
+        if (event.key() == GLFW.GLFW_KEY_F3 || CleanerAndSimplerF3Client.openEditor.matches(event)) {
             this.onClose();
             return true;
         }

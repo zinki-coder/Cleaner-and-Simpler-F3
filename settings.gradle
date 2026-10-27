@@ -10,4 +10,4 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = 'cleaning-f3'
+rootProject.name = 'cleaner-and-simpler-f3'

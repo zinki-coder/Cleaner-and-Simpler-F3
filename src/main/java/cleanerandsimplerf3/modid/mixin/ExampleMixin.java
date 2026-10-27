@@ -1,4 +1,4 @@
-package cleaningf3.modid.mixin;
+package cleanerandsimplerf3.modid.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

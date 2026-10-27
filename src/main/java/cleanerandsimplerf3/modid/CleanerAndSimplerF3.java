@@ -1,4 +1,4 @@
-package cleaningf3.modid;
+package cleanerandsimplerf3.modid;
 
 import net.fabricmc.api.ModInitializer;
 
@@ -7,8 +7,8 @@ import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CleaningF3 implements ModInitializer {
-	public static final String MOD_ID = "cleaning-f3";
+public class CleanerAndSimplerF3 implements ModInitializer {
+	public static final String MOD_ID = "cleaner-and-simpler-f3";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.

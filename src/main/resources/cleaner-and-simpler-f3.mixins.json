@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "cleaningf3.modid.mixin",
+	"package": "cleanerandsimplerf3.modid.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"ExampleMixin"
