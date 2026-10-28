@@ -21,6 +21,8 @@ public final class F3Renderer {
     }
 
     public static void render(GuiGraphicsExtractor g, List<String> lines, boolean left) {
+        net.minecraft.client.gui.screens.Screen open = Minecraft.getInstance().screen;
+        if (open != null && !(open instanceof EditScreen)) return;
         Font font = Minecraft.getInstance().font;
         float s = scale();
         g.pose().pushMatrix();
