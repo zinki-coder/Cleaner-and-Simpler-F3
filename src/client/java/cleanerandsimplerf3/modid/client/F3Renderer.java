@@ -8,12 +8,14 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 public final class F3Renderer {
     /** Schriftgroesse von F3 und Overlay, solange das Overlay offen ist. */
     public static final float EDIT_SCALE = 0.5f;
+    /** Schriftgroesse von F3, solange das Overlay offen ist. */
+    public static final float F3_SCALE = 0.25f;
     private static final int STEP = 11;
 
     private F3Renderer() {}
 
     public static float scale() {
-        return Minecraft.getInstance().screen instanceof EditScreen ? EDIT_SCALE : 1.0f;
+        return Minecraft.getInstance().screen instanceof EditScreen ? F3_SCALE : 1.0f;
     }
 
     public static void render(GuiGraphicsExtractor g, List<String> lines, boolean left) {
