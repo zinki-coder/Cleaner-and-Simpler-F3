@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Suorituskyky",
+  "csf3.group.position": "Sijainti ja maailma",
+  "csf3.group.rendering": "Renderöinti ja chunkit",
+  "csf3.group.misc": "Muut",
+  "csf3.group.system": "Järjestelmä",
+  "csf3.group.looking_at": "Kohde",
+  "csf3.group.debug_charts": "Virheenkorjauskaaviot",
+  "csf3.title.a": "Mukauta F3:a:",
+  "csf3.title.b": "Näytä tai piilota ryhmät",
+  "key.cleanerandsimplerf3.edit": "Muokkaa F3-näyttöä"
+}

@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Продуктивність",
+  "csf3.group.position": "Позиція та світ",
+  "csf3.group.rendering": "Рендеринг і чанки",
+  "csf3.group.misc": "Інше",
+  "csf3.group.system": "Система",
+  "csf3.group.looking_at": "Ціль",
+  "csf3.group.debug_charts": "Графіки налагодження",
+  "csf3.title.a": "Налаштування F3:",
+  "csf3.title.b": "Показати або приховати групи",
+  "key.cleanerandsimplerf3.edit": "Налаштувати екран F3"
+}

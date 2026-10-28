@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Výkon",
+  "csf3.group.position": "Pozice a svět",
+  "csf3.group.rendering": "Vykreslování a chunky",
+  "csf3.group.misc": "Různé",
+  "csf3.group.system": "Systém",
+  "csf3.group.looking_at": "Cíl",
+  "csf3.group.debug_charts": "Ladicí grafy",
+  "csf3.title.a": "Přizpůsobit F3:",
+  "csf3.title.b": "Zobrazit nebo skrýt skupiny",
+  "key.cleanerandsimplerf3.edit": "Upravit obrazovku F3"
+}

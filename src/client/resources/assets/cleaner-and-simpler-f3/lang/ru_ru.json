@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Производительность",
+  "csf3.group.position": "Позиция и мир",
+  "csf3.group.rendering": "Рендеринг и чанки",
+  "csf3.group.misc": "Прочее",
+  "csf3.group.system": "Система",
+  "csf3.group.looking_at": "Цель",
+  "csf3.group.debug_charts": "Графики отладки",
+  "csf3.title.a": "Настройка F3:",
+  "csf3.title.b": "Показать или скрыть группы",
+  "key.cleanerandsimplerf3.edit": "Настроить экран F3"
+}

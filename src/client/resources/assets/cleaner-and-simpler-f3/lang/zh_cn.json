@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "性能",
+  "csf3.group.position": "位置与世界",
+  "csf3.group.rendering": "渲染与区块",
+  "csf3.group.misc": "其他",
+  "csf3.group.system": "系统",
+  "csf3.group.looking_at": "目标",
+  "csf3.group.debug_charts": "调试图表",
+  "csf3.title.a": "自定义F3：",
+  "csf3.title.b": "显示或隐藏分组",
+  "key.cleanerandsimplerf3.edit": "编辑F3界面"
+}

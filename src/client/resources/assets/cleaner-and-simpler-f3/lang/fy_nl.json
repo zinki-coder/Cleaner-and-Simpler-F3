@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Prestaties",
+  "csf3.group.position": "Positie en wereld",
+  "csf3.group.rendering": "Rendering en chunks",
+  "csf3.group.misc": "Overig",
+  "csf3.group.system": "Systeem",
+  "csf3.group.looking_at": "Doelwit",
+  "csf3.group.debug_charts": "Debuggrafieken",
+  "csf3.title.a": "F3 aanpassen:",
+  "csf3.title.b": "Groepen tonen of verbergen",
+  "key.cleanerandsimplerf3.edit": "F3-scherm aanpassen"
+}

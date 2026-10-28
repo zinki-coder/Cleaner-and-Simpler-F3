@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "성능",
+  "csf3.group.position": "위치 및 월드",
+  "csf3.group.rendering": "렌더링 및 청크",
+  "csf3.group.misc": "기타",
+  "csf3.group.system": "시스템",
+  "csf3.group.looking_at": "대상",
+  "csf3.group.debug_charts": "디버그 차트",
+  "csf3.title.a": "F3 사용자 지정:",
+  "csf3.title.b": "그룹 표시 또는 숨기기",
+  "key.cleanerandsimplerf3.edit": "F3 화면 편집"
+}

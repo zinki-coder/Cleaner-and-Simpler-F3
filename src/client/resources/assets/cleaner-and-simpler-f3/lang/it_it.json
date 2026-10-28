@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Prestazioni",
+  "csf3.group.position": "Posizione e mondo",
+  "csf3.group.rendering": "Rendering e chunk",
+  "csf3.group.misc": "Varie",
+  "csf3.group.system": "Sistema",
+  "csf3.group.looking_at": "Bersaglio",
+  "csf3.group.debug_charts": "Grafici di debug",
+  "csf3.title.a": "Personalizza F3:",
+  "csf3.title.b": "Mostra o nascondi i gruppi",
+  "key.cleanerandsimplerf3.edit": "Modifica schermata F3"
+}

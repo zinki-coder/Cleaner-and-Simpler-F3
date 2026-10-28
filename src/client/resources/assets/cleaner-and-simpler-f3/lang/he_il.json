@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "ביצועים",
+  "csf3.group.position": "מיקום ועולם",
+  "csf3.group.rendering": "רינדור וצ'אנקים",
+  "csf3.group.misc": "שונות",
+  "csf3.group.system": "מערכת",
+  "csf3.group.looking_at": "יעד",
+  "csf3.group.debug_charts": "תרשימי ניפוי שגיאות",
+  "csf3.title.a": "התאמת F3:",
+  "csf3.title.b": "הצגה או הסתרה של קבוצות",
+  "key.cleanerandsimplerf3.edit": "עריכת מסך F3"
+}

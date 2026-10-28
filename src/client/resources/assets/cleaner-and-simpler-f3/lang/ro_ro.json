@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Performanță",
+  "csf3.group.position": "Poziție și lume",
+  "csf3.group.rendering": "Randare și chunk-uri",
+  "csf3.group.misc": "Diverse",
+  "csf3.group.system": "Sistem",
+  "csf3.group.looking_at": "Țintă",
+  "csf3.group.debug_charts": "Grafice de depanare",
+  "csf3.title.a": "Personalizează F3:",
+  "csf3.title.b": "Afișează sau ascunde grupurile",
+  "key.cleanerandsimplerf3.edit": "Editează ecranul F3"
+}

@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "प्रदर्शन",
+  "csf3.group.position": "स्थिति और दुनिया",
+  "csf3.group.rendering": "रेंडरिंग और चंक्स",
+  "csf3.group.misc": "विविध",
+  "csf3.group.system": "सिस्टम",
+  "csf3.group.looking_at": "लक्ष्य",
+  "csf3.group.debug_charts": "डीबग चार्ट",
+  "csf3.title.a": "F3 अनुकूलित करें:",
+  "csf3.title.b": "समूह दिखाएँ या छिपाएँ",
+  "key.cleanerandsimplerf3.edit": "F3 स्क्रीन संपादित करें"
+}

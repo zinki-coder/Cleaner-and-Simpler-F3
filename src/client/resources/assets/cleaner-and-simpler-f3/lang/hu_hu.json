@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Teljesítmény",
+  "csf3.group.position": "Pozíció és világ",
+  "csf3.group.rendering": "Renderelés és chunkok",
+  "csf3.group.misc": "Egyéb",
+  "csf3.group.system": "Rendszer",
+  "csf3.group.looking_at": "Célpont",
+  "csf3.group.debug_charts": "Hibakereső grafikonok",
+  "csf3.title.a": "F3 testreszabása:",
+  "csf3.title.b": "Csoportok megjelenítése vagy elrejtése",
+  "key.cleanerandsimplerf3.edit": "F3 képernyő szerkesztése"
+}

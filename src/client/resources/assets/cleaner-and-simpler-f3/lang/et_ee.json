@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Jõudlus",
+  "csf3.group.position": "Asukoht ja maailm",
+  "csf3.group.rendering": "Renderdus ja chunkid",
+  "csf3.group.misc": "Muu",
+  "csf3.group.system": "Süsteem",
+  "csf3.group.looking_at": "Sihtmärk",
+  "csf3.group.debug_charts": "Silumisgraafikud",
+  "csf3.title.a": "Kohanda F3:",
+  "csf3.title.b": "Kuva või peida rühmad",
+  "key.cleanerandsimplerf3.edit": "Muuda F3 ekraani"
+}

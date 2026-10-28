@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Απόδοση",
+  "csf3.group.position": "Θέση και κόσμος",
+  "csf3.group.rendering": "Απόδοση εικόνας και chunks",
+  "csf3.group.misc": "Διάφορα",
+  "csf3.group.system": "Σύστημα",
+  "csf3.group.looking_at": "Στόχος",
+  "csf3.group.debug_charts": "Γραφήματα εντοπισμού σφαλμάτων",
+  "csf3.title.a": "Προσαρμογή F3:",
+  "csf3.title.b": "Εμφάνιση ή απόκρυψη ομάδων",
+  "key.cleanerandsimplerf3.edit": "Επεξεργασία οθόνης F3"
+}

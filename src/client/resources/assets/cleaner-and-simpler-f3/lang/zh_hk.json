@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "效能",
+  "csf3.group.position": "位置與世界",
+  "csf3.group.rendering": "渲染與區塊",
+  "csf3.group.misc": "其他",
+  "csf3.group.system": "系統",
+  "csf3.group.looking_at": "目標",
+  "csf3.group.debug_charts": "除錯圖表",
+  "csf3.title.a": "自訂F3：",
+  "csf3.title.b": "顯示或隱藏群組",
+  "key.cleanerandsimplerf3.edit": "編輯F3畫面"
+}

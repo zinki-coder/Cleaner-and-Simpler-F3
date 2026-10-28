@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Rendimiento",
+  "csf3.group.position": "Posición y mundo",
+  "csf3.group.rendering": "Renderizado y chunks",
+  "csf3.group.misc": "Varios",
+  "csf3.group.system": "Sistema",
+  "csf3.group.looking_at": "Objetivo",
+  "csf3.group.debug_charts": "Gráficos de depuración",
+  "csf3.title.a": "Personalizar F3:",
+  "csf3.title.b": "Mostrar u ocultar grupos",
+  "key.cleanerandsimplerf3.edit": "Editar la pantalla F3"
+}

@@ -1,1 +1,12 @@
-{ "key.cleanerandsimplerf3.edit": "Edit F3 screen" }
+{
+  "key.cleanerandsimplerf3.edit": "Edit F3 screen",
+  "csf3.group.performance": "Performance",
+  "csf3.group.position": "Position & World",
+  "csf3.group.rendering": "Rendering & Chunks",
+  "csf3.group.misc": "Misc",
+  "csf3.group.system": "System",
+  "csf3.group.looking_at": "Looking At",
+  "csf3.group.debug_charts": "Debug Charts",
+  "csf3.title.a": "Customise F3:",
+  "csf3.title.b": "Show or hide groups"
+}

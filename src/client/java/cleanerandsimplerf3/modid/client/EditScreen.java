@@ -3,6 +3,7 @@ package cleanerandsimplerf3.modid.client;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -38,7 +39,7 @@ public class EditScreen extends Screen {
     }
 
     public EditScreen(Screen parent) {
-        super(Component.literal("F3 anpassen"));
+        super(Component.translatable("csf3.title.a"));
         this.parent = parent;
     }
 
@@ -65,7 +66,7 @@ public class EditScreen extends Screen {
     }
 
     private int statusW() {
-        return 3 + this.font.width("(aus)") + 4 + this.font.width("(ein)") + 3;
+        return 3 + this.font.width(offText()) + 4 + this.font.width(onText()) + 3;
     }
 
     private int totalWidth(Row r) {
@@ -102,7 +103,7 @@ public class EditScreen extends Screen {
             }).bounds(bx, by, BTN, BTN).build());
             y += ROW_STEP;
         }
-        this.addRenderableWidget(Button.builder(Component.literal("Fertig"), b -> this.onClose())
+        this.addRenderableWidget(Button.builder(Component.translatable("gui.done"), b -> this.onClose())
             .bounds(this.width / 2 - 40, this.height - 50, 80, 16).build());
     }
 
@@ -119,8 +120,8 @@ public class EditScreen extends Screen {
             g.pose().scale(S, S);
             int sw = Math.round(this.width / S);
 
-            String a = "F3 anpassen:";
-            String b = "Gruppen ein- oder ausblenden";
+            String a = Component.translatable("csf3.title.a").getString();
+            String b = Component.translatable("csf3.title.b").getString();
             int wa = f.width(a) + 12;
             int wb = f.width(b) + 12;
             int tw = wa + 1 + wb;
@@ -139,10 +140,10 @@ public class EditScreen extends Screen {
                 g.text(f, label(r), r.x() + 3, r.y() + 2, 0xFF000000, false);
 
                 int sx = r.x() + lw + GAP;
-                int aw = f.width("(aus)");
+                int aw = f.width(offText());
                 F3Renderer.roundedFill(g, sx, r.y(), sx + statusW(), r.y() + BOX_H, 0xB0000000);
-                g.text(f, "(aus)", sx + 3, r.y() + 2, shown ? 0xFF8A8A8A : 0xFFFF5555, false);
-                g.text(f, "(ein)", sx + 3 + aw + 4, r.y() + 2, shown ? 0xFF7CFC7C : 0xFF8A8A8A, false);
+                g.text(f, offText(), sx + 3, r.y() + 2, shown ? 0xFF8A8A8A : 0xFFFF5555, false);
+                g.text(f, onText(), sx + 3 + aw + 4, r.y() + 2, shown ? 0xFF7CFC7C : 0xFF8A8A8A, false);
             }
         } finally {
             g.pose().popMatrix();
@@ -182,5 +183,21 @@ public class EditScreen extends Screen {
         }
         list.save();
         list.rebuildCurrentList();
+    }
+
+    private static String offText() {
+        return word("csf3.status.off", "options.off", "off");
+    }
+
+    private static String onText() {
+        return word("csf3.status.on", "options.on", "on");
+    }
+
+    private static String word(String own, String vanilla, String fallback) {
+        String mine = Component.translatableWithFallback(own, "csf3-missing").getString();
+        String w = "csf3-missing".equals(mine)
+            ? Component.translatableWithFallback(vanilla, fallback).getString().toLowerCase(Locale.ROOT)
+            : mine;
+        return "(" + w + ")";
     }
 }

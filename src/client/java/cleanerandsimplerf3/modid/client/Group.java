@@ -2,16 +2,17 @@ package cleanerandsimplerf3.modid.client;
 
 import java.util.List;
 import java.util.regex.Pattern;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
 public enum Group {
-    PERFORMANCE("Leistung", "\u00a7e", 0xE0FFE066),
-    POSITION("Position & Welt", "\u00a7a", 0xE08FD694),
-    RENDERING("Rendering & Chunks", "\u00a7d", 0xE0F58FCB),
-    MISC("Sonstiges", "\u00a76", 0xE0FFB347),
-    SYSTEM("System", "\u00a7c", 0xE0F28B82),
-    LOOKING_AT("Blickziel", "\u00a79", 0xE08AB4F8),
-    DEBUG_CHARTS("Debug Charts", "\u00a78", 0xE0C8A27A);
+    PERFORMANCE("csf3.group.performance", "\u00a7e", 0xE0FFE066),
+    POSITION("csf3.group.position", "\u00a7a", 0xE08FD694),
+    RENDERING("csf3.group.rendering", "\u00a7d", 0xE0F58FCB),
+    MISC("csf3.group.misc", "\u00a76", 0xE0FFB347),
+    SYSTEM("csf3.group.system", "\u00a7c", 0xE0F28B82),
+    LOOKING_AT("csf3.group.looking_at", "\u00a79", 0xE08AB4F8),
+    DEBUG_CHARTS("csf3.group.debug_charts", "\u00a78", 0xE0C8A27A);
 
     public static final int ALL = Integer.MAX_VALUE;
     private static final Pattern CODES = Pattern.compile("\u00a7.");
@@ -26,7 +27,7 @@ public enum Group {
         this.color = color;
     }
 
-    public String label() { return label; }
+    public String label() { return Component.translatable(label).getString(); }
     public String marker() { return marker; }
     public int color() { return color; }
 

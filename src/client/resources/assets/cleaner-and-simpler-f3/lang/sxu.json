@@ -1,0 +1,14 @@
+{
+  "csf3.group.performance": "Leistung",
+  "csf3.group.position": "Position & Welt",
+  "csf3.group.rendering": "Rendering & Chunks",
+  "csf3.group.misc": "Sonstiges",
+  "csf3.group.system": "System",
+  "csf3.group.looking_at": "Blickziel",
+  "csf3.group.debug_charts": "Debug Charts",
+  "csf3.title.a": "F3 anpassen:",
+  "csf3.title.b": "Gruppen ein- oder ausblenden",
+  "csf3.status.off": "aus",
+  "csf3.status.on": "ein",
+  "key.cleanerandsimplerf3.edit": "F3-Bildschirm anpassen"
+}

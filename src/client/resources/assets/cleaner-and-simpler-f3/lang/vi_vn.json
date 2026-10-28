@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Hiệu năng",
+  "csf3.group.position": "Vị trí & Thế giới",
+  "csf3.group.rendering": "Kết xuất & Chunk",
+  "csf3.group.misc": "Khác",
+  "csf3.group.system": "Hệ thống",
+  "csf3.group.looking_at": "Mục tiêu",
+  "csf3.group.debug_charts": "Biểu đồ gỡ lỗi",
+  "csf3.title.a": "Tùy chỉnh F3:",
+  "csf3.title.b": "Hiện hoặc ẩn nhóm",
+  "key.cleanerandsimplerf3.edit": "Chỉnh sửa màn hình F3"
+}

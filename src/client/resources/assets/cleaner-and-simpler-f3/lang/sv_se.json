@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Prestanda",
+  "csf3.group.position": "Position och värld",
+  "csf3.group.rendering": "Rendering och chunkar",
+  "csf3.group.misc": "Övrigt",
+  "csf3.group.system": "System",
+  "csf3.group.looking_at": "Mål",
+  "csf3.group.debug_charts": "Felsökningsdiagram",
+  "csf3.title.a": "Anpassa F3:",
+  "csf3.title.b": "Visa eller dölj grupper",
+  "key.cleanerandsimplerf3.edit": "Redigera F3-skärmen"
+}

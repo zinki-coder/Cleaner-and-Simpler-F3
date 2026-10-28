@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "ประสิทธิภาพ",
+  "csf3.group.position": "ตำแหน่งและโลก",
+  "csf3.group.rendering": "การเรนเดอร์และชังก์",
+  "csf3.group.misc": "อื่น ๆ",
+  "csf3.group.system": "ระบบ",
+  "csf3.group.looking_at": "เป้าหมาย",
+  "csf3.group.debug_charts": "แผนภูมิดีบัก",
+  "csf3.title.a": "ปรับแต่ง F3:",
+  "csf3.title.b": "แสดงหรือซ่อนกลุ่ม",
+  "key.cleanerandsimplerf3.edit": "แก้ไขหน้าจอ F3"
+}

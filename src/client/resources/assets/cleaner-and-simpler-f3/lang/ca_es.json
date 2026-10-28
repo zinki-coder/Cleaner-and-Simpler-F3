@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Rendiment",
+  "csf3.group.position": "Posició i món",
+  "csf3.group.rendering": "Renderització i chunks",
+  "csf3.group.misc": "Diversos",
+  "csf3.group.system": "Sistema",
+  "csf3.group.looking_at": "Objectiu",
+  "csf3.group.debug_charts": "Gràfics de depuració",
+  "csf3.title.a": "Personalitza F3:",
+  "csf3.title.b": "Mostra o amaga els grups",
+  "key.cleanerandsimplerf3.edit": "Edita la pantalla F3"
+}

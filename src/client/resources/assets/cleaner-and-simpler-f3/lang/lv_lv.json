@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Veiktspēja",
+  "csf3.group.position": "Pozīcija un pasaule",
+  "csf3.group.rendering": "Renderēšana un čanki",
+  "csf3.group.misc": "Citi",
+  "csf3.group.system": "Sistēma",
+  "csf3.group.looking_at": "Mērķis",
+  "csf3.group.debug_charts": "Atkļūdošanas diagrammas",
+  "csf3.title.a": "Pielāgot F3:",
+  "csf3.title.b": "Rādīt vai paslēpt grupas",
+  "key.cleanerandsimplerf3.edit": "Rediģēt F3 ekrānu"
+}

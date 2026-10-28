@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "パフォーマンス",
+  "csf3.group.position": "位置とワールド",
+  "csf3.group.rendering": "レンダリングとチャンク",
+  "csf3.group.misc": "その他",
+  "csf3.group.system": "システム",
+  "csf3.group.looking_at": "ターゲット",
+  "csf3.group.debug_charts": "デバッグチャート",
+  "csf3.title.a": "F3のカスタマイズ:",
+  "csf3.title.b": "グループの表示/非表示",
+  "key.cleanerandsimplerf3.edit": "F3画面を編集"
+}

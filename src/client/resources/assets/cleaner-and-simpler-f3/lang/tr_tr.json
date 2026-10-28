@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Performans",
+  "csf3.group.position": "Konum ve Dünya",
+  "csf3.group.rendering": "Oluşturma ve Chunk'lar",
+  "csf3.group.misc": "Diğer",
+  "csf3.group.system": "Sistem",
+  "csf3.group.looking_at": "Hedef",
+  "csf3.group.debug_charts": "Hata Ayıklama Grafikleri",
+  "csf3.title.a": "F3'ü özelleştir:",
+  "csf3.title.b": "Grupları göster veya gizle",
+  "key.cleanerandsimplerf3.edit": "F3 ekranını düzenle"
+}

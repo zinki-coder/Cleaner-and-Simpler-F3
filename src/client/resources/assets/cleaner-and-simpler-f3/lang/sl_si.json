@@ -1,0 +1,12 @@
+{
+  "csf3.group.performance": "Zmogljivost",
+  "csf3.group.position": "Položaj in svet",
+  "csf3.group.rendering": "Izris in chunki",
+  "csf3.group.misc": "Razno",
+  "csf3.group.system": "Sistem",
+  "csf3.group.looking_at": "Cilj",
+  "csf3.group.debug_charts": "Grafikoni za odpravljanje napak",
+  "csf3.title.a": "Prilagodi F3:",
+  "csf3.title.b": "Pokaži ali skrij skupine",
+  "key.cleanerandsimplerf3.edit": "Uredi zaslon F3"
+}
